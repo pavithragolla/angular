@@ -1,0 +1,17 @@
+<h2>BOOKS</h2>
+
+<button (click)="isShowing = !isShowing">Toggle</button>
+<!-- <button (click)="handleClick()" [disabled]="isDisabled">Show Books</button> -->
+<!-- <button (click)="isShowing = !isShowing">
+    <ng-container *ngIf="!isShowing">Show Books</ng-container>
+    <ng-container *ngIf="isShowing">Hide Books</ng-container>
+
+
+</button> -->
+<!-- <input type="text" [(ngModel)]="myName" /> -->
+<!-- <p>{{myName}}</p> -->
+<ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+    <ng-container *ngFor="let singlebook of books; let i = index">
+        <app-book [book]="singlebook" class="w-1/2 p-5 text-center"></app-book>
+    </ng-container>
+</ul>
